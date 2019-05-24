@@ -15,7 +15,7 @@ use ESD\Core\Server\Port\IServerPort;
  * Class ServerPort
  * @package ESD\BaseServer\Server
  */
-abstract class ServerPort extends AbstractServerPort
+abstract class ServerPort extends AbstractServerPort implements IServerPort
 {
 
 }

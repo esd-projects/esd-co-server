@@ -8,13 +8,12 @@
 
 namespace ESD\Co\Server\Port;
 
+use ESD\Core\Exception\ConfigException;
 use ESD\Core\Server\Beans\Request;
 use ESD\Core\Server\Beans\Response;
-use ESD\Core\Exception\ConfigException;
 use ESD\Core\Server\Beans\WebSocketCloseFrame;
 use ESD\Core\Server\Beans\WebSocketFrame;
 use ESD\Core\Server\Config\PortConfig;
-use ESD\Core\Server\Port\IServerPort;
 use ESD\Core\Server\Server;
 use ESD\Coroutine\Context\Context;
 use Exception;
@@ -28,7 +27,7 @@ use Throwable;
  * Class ServerPort
  * @package ESD\BaseServer\Server
  */
-abstract class AbstractServerPort implements IServerPort
+abstract class AbstractServerPort
 {
     /**
      * @var Context
@@ -244,8 +243,8 @@ abstract class AbstractServerPort implements IServerPort
             $response->end("server is not ready");
             return;
         }
-        $_request = new \ESD\CO\Server\Beans\Request($request);
-        $_response = new \ESD\CO\Server\Beans\Response($response);
+        $_request = new \ESD\Co\Server\Beans\Request($request);
+        $_response = new \ESD\Co\Server\Beans\Response($response);
         try {
             setContextValue("request", $_request, true);
             setContextValue("response", $_response, true);
