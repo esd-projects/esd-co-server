@@ -18,13 +18,16 @@ use ESD\Coroutine\Event\EventCallFactory;
 
 abstract class Server extends \ESD\Core\Server\Server
 {
-    public function __construct(ServerConfig $serverConfig, string $defaultPortClass, string $defaultProcessClass)
+    public function __construct(?ServerConfig $serverConfig, string $defaultPortClass, string $defaultProcessClass)
     {
         Co::enableCo();
         DI::$definitions = [
             Channel::class => new ChannelFactory(),
             EventCall::class => new EventCallFactory()
         ];
+        if ($serverConfig == null) {
+            $serverConfig = new ServerConfig();
+        }
         parent::__construct($serverConfig, $defaultPortClass, $defaultProcessClass);
     }
 }
