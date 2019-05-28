@@ -10,7 +10,7 @@ use ESD\Server\Co\Server;
 
 class DefaultServer extends Server
 {
-    public function __construct(?ServerConfig $serverConfig, string $defaultPortClass = DefaultPort::class, string $defaultProcessClass = DefaultProcess::class)
+    public function __construct(?ServerConfig $serverConfig = null, string $defaultPortClass = DefaultPort::class, string $defaultProcessClass = DefaultProcess::class)
     {
         parent::__construct($serverConfig, $defaultPortClass, $defaultProcessClass);
     }
