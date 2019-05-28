@@ -1,16 +1,16 @@
 <?php
 
 
-namespace ESD\Co\Server\ExampleClass\Port;
+namespace ESD\ExampleClass\Port;
 
 
 
 use ESD\Core\Server\Beans\Request;
 use ESD\Core\Server\Beans\Response;
-use ESD\Co\Server\Port\ServerPort;
 use ESD\Core\Server\Beans\WebSocketFrame;
+use ESD\Core\Server\Port\ServerPort;
 
-class SwoolePort extends ServerPort
+class DefaultPort extends ServerPort
 {
 
     public function onTcpConnect(int $fd, int $reactorId)
@@ -51,5 +51,10 @@ class SwoolePort extends ServerPort
     public function onWsOpen(Request $request)
     {
         // TODO: Implement onWsOpen() method.
+    }
+
+    public function onWsClose(int $fd, int $reactorId)
+    {
+        // TODO: Implement onWsClose() method.
     }
 }
