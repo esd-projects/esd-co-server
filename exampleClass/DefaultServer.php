@@ -1,6 +1,6 @@
 <?php
 
-namespace ESD\ExampleClass;
+namespace ESD\Server\Co\ExampleClass;
 
 use ESD\Core\Server\Process\Process;
 use ESD\Server\Co\Server;

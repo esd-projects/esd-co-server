@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ESD\ExampleClass\Process;
+namespace ESD\Server\Co\ExampleClass\Process;
 
 
 use ESD\Core\Message\Message;

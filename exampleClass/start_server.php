@@ -1,9 +1,9 @@
 <?php
 
 use ESD\Core\Server\Config\ServerConfig;
-use ESD\ExampleClass\DefaultServer;
-use ESD\ExampleClass\Port\DefaultPort;
-use ESD\ExampleClass\Process\DefaultProcess;
+use ESD\Server\Co\ExampleClass\DefaultServer;
+use ESD\Server\Co\ExampleClass\Port\DefaultPort;
+use ESD\Server\Co\ExampleClass\Process\DefaultProcess;
 
 require __DIR__ . '/../vendor/autoload.php';
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ESD\ExampleClass\Port;
+namespace ESD\Server\Co\ExampleClass\Port;
 
 
 
