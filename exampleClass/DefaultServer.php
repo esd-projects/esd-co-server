@@ -2,11 +2,19 @@
 
 namespace ESD\Server\Co\ExampleClass;
 
+use ESD\Core\Server\Config\ServerConfig;
 use ESD\Core\Server\Process\Process;
+use ESD\Server\Co\ExampleClass\Port\DefaultPort;
+use ESD\Server\Co\ExampleClass\Process\DefaultProcess;
 use ESD\Server\Co\Server;
 
 class DefaultServer extends Server
 {
+    public function __construct(?ServerConfig $serverConfig, string $defaultPortClass = DefaultPort::class, string $defaultProcessClass = DefaultProcess::class)
+    {
+        parent::__construct($serverConfig, $defaultPortClass, $defaultProcessClass);
+    }
+
     /**
      * 所有的配置插件已初始化好
      * @return mixed
