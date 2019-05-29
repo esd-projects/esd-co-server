@@ -1,7 +1,12 @@
 {
   "require": {
+<<<<<<< HEAD
     "esd/esd-core":"~0.1",
     "esd/esd-coroutine":"~0.1"
+=======
+    "esd/esd-core": "~0.1",
+    "esd/esd-coroutine": "~0.1"
+>>>>>>> a12fabcca60dfb26708d392ac8b57c245d5cc9cd
   },
 
   "autoload": {
