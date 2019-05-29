@@ -1,12 +1,13 @@
 {
   "require": {
-    "esd/esd-core": "~0.1"
+    "esd/esd-core":"~0.1",
+    "esd/esd-coroutine":"~0.1"
   },
 
   "autoload": {
     "psr-4": {
-      "ESD\\Co\\Server\\": "src/",
-      "ESD\\Co\\Server\\ExampleClass\\": "exampleClass/"
+      "ESD\\": "src/",
+      "ESD\\Server\\Co\\ExampleClass\\": "exampleClass/"
     }
   },
 
