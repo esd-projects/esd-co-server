@@ -34,7 +34,7 @@ class DefaultPort extends ServerPort
 
     public function onHttpRequest(AbstractRequest $request, AbstractResponse $response)
     {
-        var_dump($request);
+
     }
 
     public function onWsMessage(WebSocketFrame $frame)
