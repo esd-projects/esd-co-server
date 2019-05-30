@@ -5,16 +5,16 @@ namespace ESD\Server\Co\Http;
 
 
 use ESD\Core\Exception;
-use ESD\Core\Server\Beans\AbstractRequest;
+
 use ESD\Core\Server\Beans\Http\HttpStream;
 use ESD\Core\Server\Beans\Http\Uri;
-use Swoole\Http\Request;
+use ESD\Core\Server\Beans\Request;
 
-class SwooleRequest extends AbstractRequest
+class SwooleRequest extends Request
 {
 
     /**
-     * @var Request
+     * @var \Swoole\Http\Request
      */
     protected $swooleRequest;
 
@@ -25,7 +25,7 @@ class SwooleRequest extends AbstractRequest
      */
     public function load($realObject = null)
     {
-        if (! $realObject instanceof Request) {
+        if (! $realObject instanceof \Swoole\Http\Request) {
             throw new Exception("object must be instance of Swoole\\Request");
         }
 

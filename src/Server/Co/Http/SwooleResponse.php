@@ -5,15 +5,14 @@ namespace ESD\Server\Co\Http;
 
 
 use ESD\Core\Exception;
-use ESD\Core\Server\Beans\AbstractResponse;
 use ESD\Core\Server\Beans\Http\Cookie;
-use Swoole\Http\Response;
+use ESD\Core\Server\Beans\Response;
 
-class SwooleResponse extends AbstractResponse
+class SwooleResponse extends Response
 {
 
     /**
-     * @var Response
+     * @var \Swoole\Http\Response
      */
     protected $swooleResponse;
 
@@ -24,7 +23,7 @@ class SwooleResponse extends AbstractResponse
      */
     public function load($realObject = null)
     {
-        if (! $realObject instanceof Response) {
+        if (! $realObject instanceof \Swoole\Http\Response) {
             throw new Exception("object must be instance of Swoole\\Response");
         }
 
