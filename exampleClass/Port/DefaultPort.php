@@ -4,9 +4,8 @@
 namespace ESD\Server\Co\ExampleClass\Port;
 
 
-
-use ESD\Core\Server\Beans\Request;
-use ESD\Core\Server\Beans\Response;
+use ESD\Core\Server\Beans\AbstractRequest;
+use ESD\Core\Server\Beans\AbstractResponse;
 use ESD\Core\Server\Beans\WebSocketFrame;
 use ESD\Core\Server\Port\ServerPort;
 
@@ -33,9 +32,9 @@ class DefaultPort extends ServerPort
         // TODO: Implement onUdpPacket() method.
     }
 
-    public function onHttpRequest(Request $request, Response $response)
+    public function onHttpRequest(AbstractRequest $request, AbstractResponse $response)
     {
-
+        var_dump($request);
     }
 
     public function onWsMessage(WebSocketFrame $frame)
@@ -43,12 +42,12 @@ class DefaultPort extends ServerPort
         // TODO: Implement onWsMessage() method.
     }
 
-    public function onWsPassCustomHandshake(Request $request): bool
+    public function onWsPassCustomHandshake(AbstractRequest $request): bool
     {
         // TODO: Implement onWsPassCustomHandshake() method.
     }
 
-    public function onWsOpen(Request $request)
+    public function onWsOpen(AbstractRequest $request)
     {
         // TODO: Implement onWsOpen() method.
     }
