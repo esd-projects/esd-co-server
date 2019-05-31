@@ -30,7 +30,7 @@ class SwooleRequest extends Request
         }
 
         $this->swooleRequest = $realObject;
-        $this->headers = $this->swooleRequest->header;
+        $this->withHeaders($this->swooleRequest->header);
         $this->server = $this->swooleRequest->server;
 
         $this->queryParams = $this->swooleRequest->get;
