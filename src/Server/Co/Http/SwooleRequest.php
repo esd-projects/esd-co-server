@@ -30,15 +30,15 @@ class SwooleRequest extends Request
         }
 
         $this->swooleRequest = $realObject;
-        $this->withHeaders($this->swooleRequest->header);
+        $this->setHeaders($this->swooleRequest->header ?? []);
         $this->server = $this->swooleRequest->server;
 
-        $this->queryParams = $this->swooleRequest->get;
-        $this->parsedBody = $this->swooleRequest->post;
+        $this->queryParams = $this->swooleRequest->get ?? [];
+        $this->parsedBody = $this->swooleRequest->post ?? [];
 
-        $this->cookieParams = $this->swooleRequest->cookie;
+        $this->cookieParams = $this->swooleRequest->cookie ?? [];
 
-        $this->files = $this->swooleRequest->files;
+        $this->files = $this->swooleRequest->files ?? [];
         $this->fd = $this->swooleRequest->fd;
         $this->streamId = $this->swooleRequest->streamId;
 
