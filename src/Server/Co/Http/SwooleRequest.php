@@ -45,6 +45,7 @@ class SwooleRequest extends Request
         $this->stream = new HttpStream($this->swooleRequest->rawContent());
 
         $this->method = strtoupper($this->server[self::SERVER_REQUEST_METHOD]);
-        $this->uri = new Uri($this->server[self::SERVER_REQUEST_URI]);
+        $this->uri = new Uri($this->headers['host'][0] . $this->server[self::SERVER_REQUEST_URI]);
+        $this->uri->withScheme("http");
     }
 }
