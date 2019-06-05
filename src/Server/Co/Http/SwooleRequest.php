@@ -28,7 +28,6 @@ class SwooleRequest extends Request
         if (! $realObject instanceof \Swoole\Http\Request) {
             throw new Exception("object must be instance of Swoole\\Request");
         }
-
         $this->swooleRequest = $realObject;
         $this->setHeaders($this->swooleRequest->header ?? []);
         $this->server = $this->swooleRequest->server;
@@ -45,7 +44,14 @@ class SwooleRequest extends Request
         $this->stream = new HttpStream($this->swooleRequest->rawContent());
 
         $this->method = strtoupper($this->server[self::SERVER_REQUEST_METHOD]);
-        $this->uri = new Uri($this->headers['host'][0] . $this->server[self::SERVER_REQUEST_URI]);
-        $this->uri->withScheme("http");
+        $queryString =  '';
+        if (!empty($this->queryParams)) {
+            $queryString = "?".http_build_query($this->queryParams);
+        }
+        $this->uri = new Uri(sprintf("http://%s%s%s",
+            $this->headers['host'][0],
+            $this->server[self::SERVER_REQUEST_URI],
+            $queryString)
+        );
     }
 }
