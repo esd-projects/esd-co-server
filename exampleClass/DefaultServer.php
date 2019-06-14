@@ -48,4 +48,13 @@ class DefaultServer extends Server
     {
         // TODO: Implement onManagerStop() method.
     }
+
+    /**
+     * 插件初始化结束
+     * @return mixed
+     */
+    public function pluginInitialized()
+    {
+        // TODO: Implement pluginInitialized() method.
+    }
 }
